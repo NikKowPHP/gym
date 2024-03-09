@@ -11,7 +11,14 @@ export default {
         "gray-50": "#EFE6E6",
         "gray-100": "#DFCCCC",
         "gray-500": "#5E0000",
-        "primary-100": "#ffA6A3"
+        "primary-100": "#ffA6A3",
+        "primary-200": "#ffA6A3",
+
+        "primary-300": "#ffa6a2",
+        "primary-500": "#ffa6a1",
+        "secondary-300": "#f0cf6e",
+        "secondary-500": "#edc44a",
+
       },
       backgroundImage: (theme) => ({
         "gradient-yellowred": "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",

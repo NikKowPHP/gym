@@ -30,7 +30,7 @@ export function Home({ setSelectedPage }: Props) {
 								<img src={HomePageText} alt="home-page-text" />
 							</div>
 						</div>
-						<p>
+						<p className="mt-8 text-sm">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.
 							Accusamus, dolore. Iste fugit atque quaerat excepturi ipsum,
 							officia pariatur sint soluta consectetur perferendis, architecto
@@ -38,7 +38,7 @@ export function Home({ setSelectedPage }: Props) {
 						</p>
 					</div>
 					{/* ACTIONS */}
-					<div>
+					<div className="mt-8 flex items-center gap-8">
 						<ActionButton setSelectedPage={setSelectedPage}>
 							Join Now
 						</ActionButton>
@@ -53,15 +53,16 @@ export function Home({ setSelectedPage }: Props) {
 				</div>
 
 				{/* IMAGE */}
-				<div>
+				<div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end">
           <img src={HomePageGraphic} alt="homoe-pageGraphic" />
         </div>
 			</div>
-      {/* SPONSORS */}
+
+      {/* SPONSORS */} 
       {isAboveMediumScreens && (
-        <div>
-          <div>
-            <div>
+        <div className="h-[150px] w-full bg-primary-100 py-10">
+          <div className="mx-auto w-5/6">
+            <div className="flex w-3/5 items-center justify-between">
               <img src={SponsorRedBull} alt="redbull-sponsor" />
               <img src={SponsorForbes} alt="forbes-sponsor" />
               <img src={SponsorFortune} alt="fortune-sponsor" />

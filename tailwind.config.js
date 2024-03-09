@@ -33,6 +33,9 @@ export default {
         sm: "768px",
         md: "1060px",
       },
+      content: {
+        evolvetext: "url('./assets/EvolveText.png')",
+      }
     },
   },
   plugins: [],

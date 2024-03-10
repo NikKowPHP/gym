@@ -15,20 +15,29 @@ const benefits: Array<BenefitType> = [
 	{
 		icon: <HomeModernIcon className="h-6 w-6" />,
 		title: "State of the Art Facilities",
-		description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aut officiis modi aliquam itaque impedit fuga velit illo. Consequuntur rem commodi repudiandae, ratione accusantium nihil! Ad et nam minima"
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aut officiis modi aliquam itaque impedit fuga velit illo. Consequuntur rem commodi repudiandae, ratione accusantium nihil! Ad et nam minima",
 	},
 	{
 		icon: <UserGroupIcon className="h-6 w-6" />,
 		title: "100s of Diverse Classes",
-		description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aut officiis modi aliquam itaque impedit fuga velit illo. Consequuntur rem commodi repudiandae, ratione accusantium nihil! Ad et nam minima"
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aut officiis modi aliquam itaque impedit fuga velit illo. Consequuntur rem commodi repudiandae, ratione accusantium nihil! Ad et nam minima",
 	},
 	{
 		icon: <AcademicCapIcon className="h-6 w-6" />,
 		title: "Expert And Pro Trainers",
-		description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aut officiis modi aliquam itaque impedit fuga velit illo. Consequuntur rem commodi repudiandae, ratione accusantium nihil! Ad et nam minima"
+		description:
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aut officiis modi aliquam itaque impedit fuga velit illo. Consequuntur rem commodi repudiandae, ratione accusantium nihil! Ad et nam minima",
 	},
 ];
 
+const container = {
+	hidden: {},
+	visible: {
+		transition: { staggerChildren: 0.2 },
+	},
+};
 type Props = {
 	setSelectedPage: (selectedPage: SelectedPage) => void;
 };
@@ -51,18 +60,23 @@ export function Benefits({ setSelectedPage }: Props) {
 					</p>
 				</div>
 				{/* BENEFITS */}
-				<div className=" items-center justify-between gap-8 mt-5 md:flex">
+				<motion.div className=" items-center justify-between gap-8 mt-5 md:flex"
+				initial="hidden"
+				whileInView="visible"
+				viewport={{once: true, amount: 0.5}}
+				variants={container}
+				
+				>
 					{benefits.map((benefit: BenefitType) => (
 						<Benefit
-						key={benefit.title}
-						icon={benefit.icon}
-						title={benefit.title}
-						description={benefit.description}
-						setSelectedPage={setSelectedPage}
-
+							key={benefit.title}
+							icon={benefit.icon}
+							title={benefit.title}
+							description={benefit.description}
+							setSelectedPage={setSelectedPage}
 						/>
 					))}
-				</div>
+				</motion.div>
 			</motion.div>
 		</section>
 	);
